@@ -940,6 +940,161 @@
       font-size: 1.04rem;
     }
 
+    .faq-section {
+      background:
+        radial-gradient(circle at top right, rgba(178, 58, 45, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(243, 237, 228, 0.5), #fff);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 1.3rem;
+      align-items: start;
+    }
+
+    .faq-intro,
+    .faq-panel {
+      padding: 1.6rem;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid rgba(15, 76, 129, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .faq-intro:hover,
+    .faq-panel:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 44px rgba(10, 28, 44, 0.12);
+      border-color: rgba(15, 76, 129, 0.16);
+    }
+
+    .faq-intro p {
+      color: var(--wbs-stone);
+      line-height: 1.82;
+      margin-top: 1rem;
+    }
+
+    .faq-mini-points {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .faq-mini-points div {
+      padding: 0.9rem 1rem;
+      border-radius: 16px;
+      background: rgba(15, 76, 129, 0.05);
+      color: var(--wbs-stone);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .faq-items {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .faq-item {
+      border-radius: 20px;
+      border: 1px solid rgba(15, 76, 129, 0.1);
+      background: linear-gradient(180deg, #fff, rgba(243, 237, 228, 0.34));
+      overflow: hidden;
+      transition: border-color 0.24s ease, box-shadow 0.24s ease, transform 0.24s ease;
+    }
+
+    .faq-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(15, 76, 129, 0.18);
+      box-shadow: 0 14px 30px rgba(10, 28, 44, 0.08);
+    }
+
+    .faq-item.open {
+      border-color: rgba(15, 76, 129, 0.22);
+      box-shadow: 0 20px 38px rgba(10, 28, 44, 0.1);
+    }
+
+    .faq-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: left;
+      border: 0;
+      background: transparent;
+      padding: 1.2rem 1.2rem;
+      cursor: pointer;
+    }
+
+    .faq-trigger span:first-child {
+      font-family: "Roboto Slab", serif;
+      font-size: 1.05rem;
+      color: var(--wbs-blue-deep);
+      line-height: 1.4;
+    }
+
+    .faq-icon {
+      position: relative;
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--wbs-blue), var(--wbs-blue-deep));
+      box-shadow: 0 12px 24px rgba(15, 76, 129, 0.2);
+      transition: transform 0.24s ease, background 0.24s ease;
+    }
+
+    .faq-icon::before,
+    .faq-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 2px;
+      background: #fff;
+      border-radius: 999px;
+      transform: translate(-50%, -50%);
+      transition: transform 0.24s ease, opacity 0.24s ease;
+    }
+
+    .faq-icon::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(180deg);
+      background: linear-gradient(135deg, var(--wbs-red), var(--wbs-red-dark));
+    }
+
+    .faq-item.open .faq-icon::after {
+      opacity: 0;
+      transform: translate(-50%, -50%) rotate(90deg) scaleX(0.2);
+    }
+
+    .faq-answer-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.28s ease;
+    }
+
+    .faq-item.open .faq-answer-wrap {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+    }
+
+    .faq-answer-inner {
+      padding: 0 1.2rem 1.25rem;
+      color: var(--wbs-stone);
+      line-height: 1.82;
+      font-size: 0.97rem;
+    }
+
     .lead-section {
       background: linear-gradient(180deg, rgba(243, 237, 228, 0.72), #fff);
     }
@@ -1219,6 +1374,10 @@
 
       .video-frame {
         min-height: 360px;
+      }
+
+      .faq-layout {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1690,6 +1849,114 @@
       </div>
     </section>
 
+    <section class="faq-section">
+      <div class="container">
+        <div class="faq-layout">
+          <div class="faq-intro">
+            <span class="section-tag">Common Questions</span>
+            <h2 style="margin: 0.8rem 0 0; font-family: 'Roboto Slab', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--wbs-blue-deep);">Questions homeowners usually want answered first.</h2>
+            <p>
+              This section gives people something real to click through while reducing hesitation.
+              It helps the page feel more complete and gives cautious homeowners more confidence
+              before they book a planning session.
+            </p>
+            <div class="faq-mini-points">
+              <div>Click any question to reveal more details.</div>
+              <div>Built to answer trust, budget, and process questions without feeling pushy.</div>
+              <div>Designed to look polished and interactive, not like a generic FAQ list.</div>
+            </div>
+          </div>
+
+          <div class="faq-panel">
+            <div class="faq-items">
+              <article class="faq-item open">
+                <button class="faq-trigger" type="button" aria-expanded="true">
+                  <span>What happens in the free planning session?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrap">
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      You will talk with a local team member about your kitchen, your goals, your
+                      style direction, and the kind of functionality you want to improve. The goal
+                      is to help you understand your options and leave with more clarity, not to
+                      pressure you into a rushed decision.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-trigger" type="button" aria-expanded="false">
+                  <span>Do I need to know my exact budget before I reach out?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrap">
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      No. Many homeowners start before they know what a realistic kitchen or cabinet
+                      upgrade should cost. Part of the planning session is helping you understand
+                      likely budget ranges, where it makes sense to invest, and where you may have
+                      options to save.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-trigger" type="button" aria-expanded="false">
+                  <span>Is this only for full kitchen remodels?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrap">
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      Not at all. Some homeowners are planning a full kitchen transformation, while
+                      others are focused on new cabinets, improving layout efficiency, refreshing the
+                      look of the space, or making targeted upgrades that improve daily use.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-trigger" type="button" aria-expanded="false">
+                  <span>What makes Wyoming Building Supply different from a big box option?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrap">
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      The biggest difference is guidance and follow-through. Wyoming Building Supply
+                      gives homeowners access to a local team, product expertise, showroom support,
+                      and long-term service instead of a transactional experience that ends once the
+                      order is placed.
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="faq-item">
+                <button class="faq-trigger" type="button" aria-expanded="false">
+                  <span>Do I have to commit after the consultation?</span>
+                  <span class="faq-icon" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer-wrap">
+                  <div class="faq-answer">
+                    <div class="faq-answer-inner">
+                      No. The planning session is meant to help you understand your options and your
+                      next step. It is a low-pressure way to explore ideas, ask questions, and get
+                      better direction before making any bigger decision.
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="lead-section" id="lead-form">
       <div class="container">
         <div class="lead-layout">
@@ -1803,5 +2070,26 @@
       <div>Focused on consultation requests for cabinetry and kitchen improvement projects.</div>
     </div>
   </footer>
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector(".faq-trigger");
+
+      trigger.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+
+        faqItems.forEach((faqItem) => {
+          faqItem.classList.remove("open");
+          faqItem.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+        });
+
+        if (!isOpen) {
+          item.classList.add("open");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
