@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wyoming Building Supply | Remodeling & Design Landing Page</title>
+  <meta
+    name="description"
+    content="A Wyoming Building Supply landing page for homeowners planning a remodel, makeover, or design consultation."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Roboto+Slab:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    :root {
+      --wbs-blue: #0f4c81;
+      --wbs-blue-deep: #09375d;
+      --wbs-red: #b23a2d;
+      --wbs-red-dark: #912d23;
+      --wbs-sand: #f3ede4;
+      --wbs-cream: #fbf8f4;
+      --wbs-ink: #21303f;
+      --wbs-stone: #6b7783;
+      --wbs-line: rgba(15, 76, 129, 0.14);
+      --shadow-lg: 0 24px 60px rgba(10, 28, 44, 0.16);
+      --shadow-md: 0 16px 34px rgba(10, 28, 44, 0.11);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      color: var(--wbs-ink);
+      background:
+        radial-gradient(circle at top left, rgba(178, 58, 45, 0.1), transparent 28%),
+        linear-gradient(180deg, #fff 0%, var(--wbs-cream) 48%, #fff 100%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--wbs-blue);
+      color: #fff;
+      text-align: center;
+      padding: 0.7rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(9, 55, 93, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .nav-brand img {
+      width: 182px;
+      height: auto;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.9rem 1.3rem;
+      border-radius: 999px;
+      border: 0;
+      font-weight: 800;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--wbs-red);
+      color: #fff;
+      box-shadow: 0 10px 20px rgba(178, 58, 45, 0.28);
+    }
+
+    .btn-primary:hover {
+      background: var(--wbs-red-dark);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 5.5rem 0 4rem;
+      background:
+        linear-gradient(135deg, rgba(9, 55, 93, 0.97), rgba(15, 76, 129, 0.9)),
+        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -12% -120px auto;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero h1,
+    .section-heading h2,
+    .cta-copy h2 {
+      margin: 1rem 0 0;
+      font-family: "Roboto Slab", serif;
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.9rem, 6vw, 5.4rem);
+      max-width: 11ch;
+    }
+
+    .hero h1 span {
+      color: #ffd8c8;
+    }
+
+    .hero-copy p {
+      max-width: 640px;
+      margin: 1.2rem 0 0;
+      font-size: 1.08rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0;
+    }
+
+    .hero-points span {
+      padding: 0.7rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1.8rem;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 1.15rem;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card {
+      background: #fff;
+      color: var(--wbs-ink);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .hero-card-top {
+      padding: 1.15rem 1.2rem;
+      background: linear-gradient(135deg, var(--wbs-sand), #fff);
+      border-bottom: 1px solid rgba(15, 76, 129, 0.1);
+    }
+
+    .hero-card-top strong,
+    .placeholder-head strong,
+    .service-card h3,
+    .proof-card h3,
+    .timeline-card h3 {
+      font-family: "Roboto Slab", serif;
+    }
+
+    .hero-card-top p {
+      margin: 0.55rem 0 0;
+      color: var(--wbs-stone);
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    .placeholder-stack {
+      display: grid;
+      gap: 1rem;
+      padding: 1.2rem;
+    }
+
+    .placeholder-box {
+      border-radius: 18px;
+      border: 1.5px dashed rgba(15, 76, 129, 0.28);
+      background:
+        linear-gradient(180deg, rgba(243, 237, 228, 0.55), rgba(255, 255, 255, 0.88));
+      padding: 1rem;
+    }
+
+    .placeholder-head {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .icon-shell {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--wbs-blue);
+      color: #fff;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+    }
+
+    .placeholder-head small {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--wbs-stone);
+      font-size: 0.84rem;
+    }
+
+    .placeholder-body {
+      padding: 1rem;
+      min-height: 126px;
+      border-radius: 14px;
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          rgba(15, 76, 129, 0.04),
+          rgba(15, 76, 129, 0.04) 12px,
+          rgba(255, 255, 255, 0.7) 12px,
+          rgba(255, 255, 255, 0.7) 24px
+        );
+      border: 1px solid rgba(15, 76, 129, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--wbs-stone);
+      font-weight: 700;
+      line-height: 1.7;
+    }
+
+    .trust-strip {
+      margin-top: -1.4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(15, 76, 129, 0.08);
+    }
+
+    .trust-item {
+      padding: 1rem 1.05rem;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(243, 237, 228, 0.5), rgba(255, 255, 255, 0.95));
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--wbs-blue);
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--wbs-stone);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading p {
+      margin: 1rem 0 0;
+      color: var(--wbs-stone);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--wbs-red);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2,
+    .cta-copy h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--wbs-blue-deep);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .service-card,
+    .proof-card,
+    .timeline-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(15, 76, 129, 0.08);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--wbs-blue), var(--wbs-blue-deep));
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3,
+    .proof-card h3,
+    .timeline-card h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--wbs-blue-deep);
+    }
+
+    .service-card p,
+    .proof-card p,
+    .timeline-card p {
+      margin: 0.8rem 0 0;
+      color: var(--wbs-stone);
+      line-height: 1.75;
+    }
+
+    .proof-section {
+      background: linear-gradient(180deg, rgba(243, 237, 228, 0.75), rgba(255, 255, 255, 0.98));
+    }
+
+    .proof-layout {
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 1.35rem;
+    }
+
+    .proof-card.featured {
+      background:
+        linear-gradient(150deg, rgba(9, 55, 93, 0.97), rgba(15, 76, 129, 0.94)),
+        #0f4c81;
+      color: #fff;
+      min-height: 100%;
+    }
+
+    .proof-card.featured h3,
+    .proof-card.featured p,
+    .proof-card.featured li,
+    .proof-card.featured .quote-mark {
+      color: #fff;
+    }
+
+    .quote-mark {
+      font-size: 3rem;
+      line-height: 1;
+      color: #ffd8c8;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .proof-card ul {
+      margin: 1rem 0 0;
+      padding-left: 1.15rem;
+      color: var(--wbs-stone);
+      line-height: 1.8;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+    }
+
+    .timeline-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      background: var(--wbs-red);
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .cta-band {
+      padding: 4.5rem 0;
+    }
+
+    .cta-shell {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.2rem;
+      padding: 1.35rem;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--wbs-blue-deep), var(--wbs-blue));
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-copy h2 {
+      color: #fff;
+    }
+
+    .cta-copy p {
+      margin: 1rem 0 0;
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.8;
+    }
+
+    .cta-panel {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .cta-panel h3 {
+      margin: 0;
+      font-family: "Roboto Slab", serif;
+      font-size: 1.45rem;
+    }
+
+    .cta-panel p {
+      margin: 0.8rem 0 1.25rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .cta-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .cta-list div {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 2rem 0 2.8rem;
+      color: var(--wbs-stone);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--wbs-line);
+      padding-top: 1.2rem;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .proof-layout,
+      .cta-shell,
+      .services,
+      .timeline,
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 4.2rem;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-actions,
+      .hero-cta-row {
+        width: 100%;
+      }
+
+      .nav-actions .btn,
+      .hero-cta-row .btn {
+        flex: 1 1 220px;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .topbar {
+        font-size: 0.86rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Free in-home consultations for remodeling and design planning.</div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="nav-brand" href="#top" aria-label="Wyoming Building Supply home">
+        <img
+          src="https://wyomingbuildingsupply.com/_next/image/?url=%2Fimages%2Fnavbar-logo.png&w=640&q=75"
+          alt="Wyoming Building Supply"
+        >
+      </a>
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="#crm-placeholder">CRM Placeholder</a>
+        <a class="btn btn-primary" href="#meeting-placeholder">Schedule Meeting</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Remodeling Landing Page</div>
+          <h1>Remake your space with <span>materials, design, and real guidance.</span></h1>
+          <p>
+            This Wyoming Building Supply landing page is built for homeowners ready to remodel
+            kitchens, bathrooms, utility spaces, and other high-impact areas of the home. It keeps
+            the polished split-layout feel of your reference page while staying grounded in Wyoming
+            Building Supply's existing blue, red, and warm neutral brand system.
+          </p>
+          <div class="hero-points">
+            <span>Cabinets & Vanities</span>
+            <span>Countertops</span>
+            <span>Windows & Doors</span>
+            <span>Design + Consultation</span>
+          </div>
+          <div class="hero-cta-row">
+            <a class="btn btn-primary" href="#meeting-placeholder">Book a Design Meeting</a>
+            <a class="btn btn-secondary" href="#services">Explore Remodeling Services</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <strong>Ready for CRM and scheduler embeds</strong>
+              <p>
+                These panels are intentionally built as placeholders so your CRM widget and meeting
+                booking experience can be dropped in without redesigning the page.
+              </p>
+            </div>
+
+            <div class="placeholder-stack">
+              <div class="placeholder-box" id="crm-placeholder">
+                <div class="placeholder-head">
+                  <div class="icon-shell" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect>
+                      <path d="M7 8h10"></path>
+                      <path d="M7 12h6"></path>
+                      <path d="M7 16h8"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>CRM Placeholder</strong>
+                    <small>Lead form, intake form, or embedded pipeline widget</small>
+                  </div>
+                </div>
+                <div class="placeholder-body">
+                  Replace this area with the CRM embed code, lead form, or campaign widget.
+                </div>
+              </div>
+
+              <div class="placeholder-box" id="meeting-placeholder">
+                <div class="placeholder-head">
+                  <div class="icon-shell" aria-hidden="true" style="background: var(--wbs-red);">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
+                      <path d="M8 3.5v3"></path>
+                      <path d="M16 3.5v3"></path>
+                      <path d="M3.5 9.5h17"></path>
+                      <path d="M8.5 13h3"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Schedule Meeting Placeholder</strong>
+                    <small>Calendar embed, booking widget, or appointment link</small>
+                  </div>
+                </div>
+                <div class="placeholder-body">
+                  Replace this block with the scheduling tool for design consultations or showroom
+                  appointments.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <strong>40+ Years</strong>
+            <span>Wyoming-rooted experience supporting remodels and new home projects.</span>
+          </div>
+          <div class="trust-item">
+            <strong>Statewide</strong>
+            <span>Showrooms and service reach across multiple Wyoming communities.</span>
+          </div>
+          <div class="trust-item">
+            <strong>Hands-On</strong>
+            <span>Consultation, design, materials, and install coordination in one process.</span>
+          </div>
+          <div class="trust-item">
+            <strong>Product Depth</strong>
+            <span>Cabinets, countertops, windows, doors, fireplaces, and more.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">What This Page Communicates</span>
+          <h2>Built for homeowners planning a thoughtful remodel, not just shopping for parts.</h2>
+          <p>
+            The page messaging leans into what Wyoming Building Supply already does well:
+            confidence-building consultation, curated materials, and experienced local support that
+            helps customers turn ideas into finished spaces.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20h16"></path>
+                <path d="M6 20V9l6-4 6 4v11"></path>
+                <path d="M9 20v-5h6v5"></path>
+              </svg>
+            </div>
+            <h3>Kitchen & Bath Focus</h3>
+            <p>
+              Lead with the rooms people most often want to remake, modernize, or fully rework,
+              especially kitchens, bathrooms, mudrooms, and utility spaces.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16"></path>
+                <path d="M4 12h16"></path>
+                <path d="M4 18h16"></path>
+                <path d="M8 6v12"></path>
+                <path d="M16 6v12"></path>
+              </svg>
+            </div>
+            <h3>Materials + Design Together</h3>
+            <p>
+              Position Wyoming Building Supply as more than a supplier by pairing product depth with
+              design support, consultation, and layout guidance.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path>
+                <path d="M12 12l8-4.5"></path>
+                <path d="M12 12v9"></path>
+                <path d="M12 12L4 7.5"></path>
+              </svg>
+            </div>
+            <h3>Easy Next Step</h3>
+            <p>
+              Keep the call to action simple: book a design conversation, request a consultation, or
+              fill out the CRM form so the team can follow up quickly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Brand Positioning</span>
+          <h2>Trust-first marketing language that fits the existing Wyoming Building Supply voice.</h2>
+          <p>
+            I pulled the tone from the live site and customer reviews: knowledgeable staff, local
+            relationships, responsive communication, and the feeling that the team helps bring a
+            homeowner's vision to life.
+          </p>
+        </div>
+
+        <div class="proof-layout">
+          <article class="proof-card featured">
+            <div class="quote-mark">“</div>
+            <h3>Sample headline block for the landing page</h3>
+            <p>
+              Whether you're updating one room or rethinking your whole home, Wyoming Building
+              Supply helps you move from inspiration to installation with products, planning, and a
+              team that knows how remodels actually come together.
+            </p>
+            <ul>
+              <li>Designed to feel consultative instead of salesy</li>
+              <li>Strong fit for kitchen, bath, and whole-home makeover campaigns</li>
+              <li>Easy to connect to existing sales and scheduling workflows</li>
+            </ul>
+          </article>
+
+          <div class="proof-list">
+            <article class="proof-card">
+              <h3>Messaging themes</h3>
+              <p>
+                Local expertise. Personalized support. Quality materials. Showroom inspiration.
+                Practical guidance. Clear next steps.
+              </p>
+            </article>
+            <article class="proof-card">
+              <h3>CTA strategy</h3>
+              <p>
+                The page is set up to support two conversion paths: people ready to schedule now and
+                people who want to submit information first through the CRM.
+              </p>
+            </article>
+            <article class="proof-card">
+              <h3>Visual direction</h3>
+              <p>
+                Deep Wyoming Building Supply blue, warm sandstone neutrals, and brick red accents
+                give the page a premium showroom feel without drifting away from the main site.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Suggested Funnel Flow</span>
+          <h2>A clean three-step journey from interest to consultation.</h2>
+          <p>
+            This section mirrors the reference page's easy-to-scan conversion flow while staying
+            focused on remodeling homeowners and Wyoming Building Supply's consultative process.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card">
+            <div class="timeline-step">01</div>
+            <h3>Share your project</h3>
+            <p>
+              Visitors can submit their project details through the CRM embed, whether they are
+              planning a kitchen refresh, a bathroom remodel, or a larger design update.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-step">02</div>
+            <h3>Meet with the team</h3>
+            <p>
+              The scheduling placeholder is ready for an appointment tool so customers can book a
+              design consultation, showroom visit, or in-home planning call.
+            </p>
+          </article>
+
+          <article class="timeline-card">
+            <div class="timeline-step">03</div>
+            <h3>Build with confidence</h3>
+            <p>
+              Once connected, the team can guide product selections, layout decisions, and next
+              steps toward a finished remodel that feels cohesive and well supported.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-shell">
+          <div class="cta-copy">
+            <span class="section-tag" style="color: #ffd8c8;">Ready To Launch</span>
+            <h2>Swap in the real CRM and booking widgets when you're ready.</h2>
+            <p>
+              The structure is already in place, so the next pass can focus on wiring in the real
+              embed codes, tightening copy for your exact audience, and replacing any temporary art
+              or text with campaign-specific assets.
+            </p>
+            <div class="hero-cta-row">
+              <a class="btn btn-primary" href="#crm-placeholder">Jump to CRM Area</a>
+              <a class="btn btn-secondary" href="#meeting-placeholder">Jump to Schedule Area</a>
+            </div>
+          </div>
+
+          <aside class="cta-panel">
+            <h3>Best next additions</h3>
+            <p>Once you have the real integrations, this page is ready for a quick production pass.</p>
+            <div class="cta-list">
+              <div>Drop in the CRM embed code</div>
+              <div>Replace the meeting placeholder with your scheduler</div>
+              <div>Add project photos or showroom imagery from Wyoming Building Supply</div>
+              <div>Tailor the headline if you want this page aimed only at kitchen and bath leads</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>Wyoming Building Supply remodel landing page concept</div>
+      <div>Built to match the main site's branding while supporting CRM and calendar embeds.</div>
+    </div>
+  </footer>
+</body>
+</html>
