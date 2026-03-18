@@ -56,6 +56,40 @@
       scroll-behavior: smooth;
     }
 
+    @keyframes floatDrift {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    @keyframes iconGlow {
+      0%,
+      100% {
+        box-shadow: 0 10px 24px rgba(15, 76, 129, 0.16);
+      }
+      50% {
+        box-shadow: 0 18px 34px rgba(15, 76, 129, 0.24);
+      }
+    }
+
+    @keyframes sheenSweep {
+      0% {
+        transform: translateX(-140%) skewX(-18deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.45;
+      }
+      100% {
+        transform: translateX(220%) skewX(-18deg);
+        opacity: 0;
+      }
+    }
+
     body {
       margin: 0;
       font-family: "Roboto", sans-serif;
@@ -132,12 +166,13 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, border-color 0.22s ease;
       cursor: pointer;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 14px 30px rgba(9, 55, 93, 0.16);
     }
 
     .btn-primary {
@@ -258,6 +293,13 @@
       border: 1px solid rgba(255, 255, 255, 0.16);
       box-shadow: var(--shadow-lg);
       backdrop-filter: blur(12px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .hero-panel:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 70px rgba(10, 28, 44, 0.2);
+      border-color: rgba(255, 255, 255, 0.24);
     }
 
     .hero-card {
@@ -299,11 +341,34 @@
     }
 
     .placeholder-box {
+      position: relative;
+      overflow: hidden;
       border-radius: 18px;
       border: 1.5px dashed rgba(15, 76, 129, 0.28);
       background:
         linear-gradient(180deg, rgba(243, 237, 228, 0.55), rgba(255, 255, 255, 0.88));
       padding: 1rem;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .placeholder-box::after {
+      content: "";
+      position: absolute;
+      inset: -40% auto -40% -24%;
+      width: 42%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      transform: translateX(-140%) skewX(-18deg);
+      pointer-events: none;
+    }
+
+    .placeholder-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 42px rgba(10, 28, 44, 0.1);
+      border-color: rgba(15, 76, 129, 0.42);
+    }
+
+    .placeholder-box:hover::after {
+      animation: sheenSweep 1.2s ease;
     }
 
     .placeholder-head {
@@ -314,6 +379,8 @@
     }
 
     .icon-shell {
+      position: relative;
+      overflow: hidden;
       width: 54px;
       height: 54px;
       border-radius: 16px;
@@ -322,6 +389,21 @@
       background: var(--wbs-blue);
       color: #fff;
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+      animation: floatDrift 4.8s ease-in-out infinite, iconGlow 4.8s ease-in-out infinite;
+      transition: transform 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .icon-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .placeholder-box:hover .icon-shell {
+      transform: translateY(-3px) scale(1.04);
     }
 
     .placeholder-head small {
@@ -378,6 +460,13 @@
       padding: 1rem 1.05rem;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(243, 237, 228, 0.5), rgba(255, 255, 255, 0.95));
+      transition: transform 0.26s ease, box-shadow 0.26s ease, background 0.26s ease;
+    }
+
+    .trust-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 34px rgba(10, 28, 44, 0.1);
+      background: linear-gradient(180deg, rgba(243, 237, 228, 0.8), rgba(255, 255, 255, 1));
     }
 
     .trust-item strong {
@@ -439,9 +528,20 @@
       background: #fff;
       box-shadow: var(--shadow-md);
       border: 1px solid rgba(15, 76, 129, 0.08);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .service-card:hover,
+    .proof-card:hover,
+    .timeline-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 44px rgba(10, 28, 44, 0.12);
+      border-color: rgba(15, 76, 129, 0.16);
     }
 
     .service-icon {
+      position: relative;
+      overflow: hidden;
       width: 58px;
       height: 58px;
       border-radius: 18px;
@@ -450,6 +550,21 @@
       background: linear-gradient(135deg, var(--wbs-blue), var(--wbs-blue-deep));
       color: #fff;
       margin-bottom: 1rem;
+      animation: floatDrift 5.2s ease-in-out infinite, iconGlow 5.2s ease-in-out infinite;
+      transition: transform 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .service-icon::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0));
+      opacity: 0.58;
+      pointer-events: none;
+    }
+
+    .service-card:hover .service-icon {
+      transform: translateY(-3px) scale(1.04);
     }
 
     .service-card h3,
@@ -498,6 +613,13 @@
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.14);
       box-shadow: var(--shadow-lg);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .support-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 52px rgba(9, 55, 93, 0.22);
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
     .support-card p {
@@ -523,6 +645,7 @@
       display: grid;
       grid-template-columns: 1.06fr 0.94fr;
       gap: 1.35rem;
+      align-items: stretch;
     }
 
     .proof-card.featured {
@@ -531,6 +654,11 @@
         #0f4c81;
       color: #fff;
       min-height: 100%;
+    }
+
+    .proof-card.featured:hover {
+      box-shadow: 0 24px 50px rgba(9, 55, 93, 0.26);
+      border-color: rgba(255, 255, 255, 0.18);
     }
 
     .proof-card.featured h3,
@@ -549,6 +677,233 @@
     .proof-list {
       display: grid;
       gap: 1rem;
+    }
+
+    .proof-visual {
+      position: relative;
+      min-height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background:
+        linear-gradient(180deg, rgba(9, 55, 93, 0.14), rgba(9, 55, 93, 0.5)),
+        url("https://cdn.sanity.io/images/875p3wgf/production/02847a4db1f126eebcdf18345d64211041d06741-3024x1120.jpg?fm=webp") center/cover;
+      border: 1px solid rgba(15, 76, 129, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .proof-visual:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 28px 56px rgba(10, 28, 44, 0.16);
+    }
+
+    .proof-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(9, 55, 93, 0.06) 0%, rgba(9, 55, 93, 0.78) 100%);
+    }
+
+    .proof-overlay {
+      position: absolute;
+      left: 1.4rem;
+      right: 1.4rem;
+      bottom: 1.4rem;
+      z-index: 1;
+      padding: 1.25rem;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      color: #fff;
+    }
+
+    .proof-overlay strong {
+      display: block;
+      font-family: "Roboto Slab", serif;
+      font-size: 1.45rem;
+      line-height: 1.15;
+    }
+
+    .proof-overlay p {
+      margin: 0.7rem 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    .proof-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .proof-badges span {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .proof-list.compact {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-section {
+      background: linear-gradient(180deg, rgba(243, 237, 228, 0.42), #fff);
+    }
+
+    .video-shell {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 1.3rem;
+      align-items: center;
+    }
+
+    .video-frame {
+      position: relative;
+      min-height: 460px;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(15, 76, 129, 0.1);
+      background:
+        linear-gradient(180deg, rgba(9, 55, 93, 0.12), rgba(9, 55, 93, 0.64)),
+        url("https://cdn.sanity.io/images/875p3wgf/production/02847a4db1f126eebcdf18345d64211041d06741-3024x1120.jpg?fm=webp") center/cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-frame:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 58px rgba(10, 28, 44, 0.16);
+    }
+
+    .video-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 26%),
+        linear-gradient(180deg, rgba(9, 55, 93, 0.04) 0%, rgba(9, 55, 93, 0.8) 100%);
+    }
+
+    .video-launch {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+    }
+
+    .video-launch[disabled] {
+      cursor: default;
+    }
+
+    .video-badge {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      z-index: 2;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .play-orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 2;
+      width: 124px;
+      height: 124px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 22px 50px rgba(9, 55, 93, 0.32);
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(14px);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+    }
+
+    .play-orb::before {
+      content: "";
+      display: block;
+      margin-left: 6px;
+      width: 0;
+      height: 0;
+      border-top: 18px solid transparent;
+      border-bottom: 18px solid transparent;
+      border-left: 28px solid #fff;
+    }
+
+    .video-frame:hover .play-orb {
+      transform: translate(-50%, -50%) scale(1.05);
+      box-shadow: 0 28px 60px rgba(9, 55, 93, 0.38);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .video-copy-card {
+      padding: 1.6rem;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid rgba(15, 76, 129, 0.08);
+      box-shadow: var(--shadow-md);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .video-copy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 44px rgba(10, 28, 44, 0.12);
+      border-color: rgba(15, 76, 129, 0.16);
+    }
+
+    .video-copy-card p {
+      color: var(--wbs-stone);
+      line-height: 1.82;
+    }
+
+    .video-points {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .video-points div {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(15, 76, 129, 0.05);
+      color: var(--wbs-stone);
+      line-height: 1.7;
+    }
+
+    .video-points strong {
+      color: var(--wbs-blue-deep);
+    }
+
+    .video-note {
+      margin-top: 1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      border: 1px dashed rgba(15, 76, 129, 0.24);
+      background: rgba(243, 237, 228, 0.52);
+      color: var(--wbs-stone);
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     .proof-card ul {
@@ -605,6 +960,16 @@
       box-shadow: var(--shadow-md);
       position: relative;
       overflow: hidden;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .lead-info:hover,
+    .lead-form-shell:hover,
+    .cta-panel:hover,
+    .trust-note:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 44px rgba(10, 28, 44, 0.12);
+      border-color: rgba(15, 76, 129, 0.16);
     }
 
     .lead-form-shell::before {
@@ -753,6 +1118,8 @@
       font-weight: 900;
       letter-spacing: 0.06em;
       margin-bottom: 1rem;
+      animation: floatDrift 5.4s ease-in-out infinite;
+      box-shadow: 0 12px 24px rgba(178, 58, 45, 0.2);
     }
 
     .cta-band {
@@ -786,6 +1153,7 @@
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.14);
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
     }
 
     .cta-panel h3 {
@@ -832,6 +1200,7 @@
       .hero-grid,
       .support-grid,
       .proof-layout,
+      .video-shell,
       .lead-layout,
       .cta-shell,
       .services,
@@ -842,6 +1211,14 @@
 
       .hero {
         padding-top: 4.2rem;
+      }
+
+      .proof-list.compact {
+        grid-template-columns: 1fr;
+      }
+
+      .video-frame {
+        min-height: 360px;
       }
     }
 
@@ -876,6 +1253,19 @@
 
       .topbar {
         font-size: 0.86rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -1105,22 +1495,32 @@
         </div>
 
         <div class="proof-layout">
-          <article class="proof-card featured" id="differentiators">
-            <div class="quote-mark">“</div>
-            <h3>We help people feel more confident before they spend.</h3>
-            <p>
-              A kitchen upgrade can feel overwhelming when you are trying to compare styles, price
-              ranges, quality levels, and installation decisions. Our job is to simplify that
-              process with honest guidance and real support.
-            </p>
-            <ul>
-              <li>Design-forward help without the pressure</li>
-              <li>Local support before, during, and after your project</li>
-              <li>Premium cabinetry and material options with practical guidance</li>
-            </ul>
+          <article class="proof-visual" id="differentiators" aria-label="Wyoming Building Supply kitchen inspiration image">
+            <div class="proof-overlay">
+              <strong>Design help feels different when you can see the possibilities.</strong>
+              <p>
+                Wyoming Building Supply combines real product knowledge, in-person showroom support,
+                and local follow-through so homeowners can make confident decisions without feeling
+                rushed.
+              </p>
+              <div class="proof-badges">
+                <span>Design-forward guidance</span>
+                <span>Showroom support</span>
+                <span>Local team</span>
+              </div>
+            </div>
           </article>
 
-          <div class="proof-list">
+          <div class="proof-list compact">
+            <article class="proof-card featured">
+              <div class="quote-mark">“</div>
+              <h3>We help people feel more confident before they spend.</h3>
+              <p>
+                A kitchen upgrade can feel overwhelming when you are trying to compare styles,
+                price ranges, quality levels, and installation decisions. Our job is to simplify
+                that process with honest guidance and real support.
+              </p>
+            </article>
             <article class="proof-card">
               <h3>Expert Guidance</h3>
               <p>
@@ -1156,6 +1556,37 @@
                 answers, or support after the sale or installation.
               </p>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="video-shell">
+          <div class="video-frame" aria-label="Featured showroom video area">
+            <div class="video-badge">Featured Video</div>
+            <button class="video-launch" type="button" disabled aria-label="Video placeholder, video source will be connected later">
+              <span class="play-orb" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div class="video-copy-card">
+            <span class="section-tag">See The Experience</span>
+            <h2 style="margin: 0.8rem 0 0; font-family: 'Roboto Slab', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--wbs-blue-deep);">See what working with a real local team feels like.</h2>
+            <p>
+              A video here helps build trust fast. It gives homeowners a chance to see the showroom,
+              feel the quality of the experience, and get more comfortable taking the next step.
+            </p>
+            <div class="video-points">
+              <div><strong>Why it matters:</strong> video helps people feel like they know who they are reaching out to before they ever book.</div>
+              <div><strong>Best use:</strong> showroom walk-through, kitchen transformation highlights, or a short expert intro from the local team.</div>
+              <div><strong>Playback style:</strong> click-to-play only, with no autoplay, so it feels respectful and trust-building.</div>
+            </div>
+            <div class="video-note">
+              This is designed to look clearly playable and in-brand. Once you give me the actual
+              video URL or embed link, I can turn this into a live click-to-play video section.
+            </div>
           </div>
         </div>
       </div>
