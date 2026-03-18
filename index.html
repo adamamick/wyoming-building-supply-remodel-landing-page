@@ -3,11 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wyoming Building Supply | Remodeling & Design Landing Page</title>
+  <title>Wyoming Building Supply | Free Kitchen & Cabinet Upgrade Planning Session</title>
   <meta
     name="description"
-    content="A Wyoming Building Supply landing page for homeowners planning a remodel, makeover, or design consultation."
+    content="Book a free kitchen and cabinet upgrade planning session with Wyoming Building Supply. Get expert local guidance, showroom support, and trusted recommendations."
   >
+  <meta property="og:title" content="Wyoming Building Supply | Free Kitchen & Cabinet Upgrade Planning Session">
+  <meta
+    property="og:description"
+    content="Book a free, no-pressure planning session with local experts and discover the best options for your cabinets, layout, and budget."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="WBSopengraph.webp">
+  <meta property="og:image:alt" content="Wyoming Building Supply kitchen upgrade planning session preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Wyoming Building Supply | Free Kitchen & Cabinet Upgrade Planning Session">
+  <meta
+    name="twitter:description"
+    content="Book a free, no-pressure planning session with local experts and discover the best options for your cabinets, layout, and budget."
+  >
+  <meta name="twitter:image" content="WBSopengraph.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -147,7 +162,7 @@
       padding: 5.5rem 0 4rem;
       background:
         linear-gradient(135deg, rgba(9, 55, 93, 0.97), rgba(15, 76, 129, 0.9)),
-        url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80") center/cover;
+        url("https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1600&q=80") center/cover;
       color: #fff;
     }
 
@@ -279,6 +294,10 @@
       padding: 1.2rem;
     }
 
+    .placeholder-stack.two-col {
+      grid-template-columns: 1fr 1fr;
+    }
+
     .placeholder-box {
       border-radius: 18px;
       border: 1.5px dashed rgba(15, 76, 129, 0.28);
@@ -332,6 +351,10 @@
       color: var(--wbs-stone);
       font-weight: 700;
       line-height: 1.7;
+    }
+
+    .placeholder-body.tall {
+      min-height: 220px;
     }
 
     .trust-strip {
@@ -404,7 +427,7 @@
 
     .services {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 1.2rem;
     }
 
@@ -447,6 +470,53 @@
 
     .proof-section {
       background: linear-gradient(180deg, rgba(243, 237, 228, 0.75), rgba(255, 255, 255, 0.98));
+    }
+
+    .support-section {
+      background:
+        linear-gradient(180deg, rgba(9, 55, 93, 0.98), rgba(15, 76, 129, 0.95)),
+        #09375d;
+      color: #fff;
+    }
+
+    .support-section .section-heading h2,
+    .support-section .section-heading p,
+    .support-section .section-tag {
+      color: #fff;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .support-card {
+      padding: 1.6rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .support-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.85;
+    }
+
+    .support-pill-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .support-pill-list div {
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.1);
+      font-weight: 700;
     }
 
     .proof-layout {
@@ -492,6 +562,183 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.15rem;
+    }
+
+    .trust-note-section {
+      background: linear-gradient(180deg, #fff, rgba(243, 237, 228, 0.45));
+    }
+
+    .trust-note {
+      padding: 2rem;
+      border-radius: 28px;
+      background: #fff;
+      border: 1px solid rgba(15, 76, 129, 0.08);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+    }
+
+    .trust-note p {
+      max-width: 760px;
+      margin: 1rem auto 0;
+      color: var(--wbs-stone);
+      line-height: 1.85;
+      font-size: 1.04rem;
+    }
+
+    .lead-section {
+      background: linear-gradient(180deg, rgba(243, 237, 228, 0.72), #fff);
+    }
+
+    .lead-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .lead-info,
+    .lead-form-shell {
+      padding: 1.5rem;
+      border-radius: 26px;
+      background: #fff;
+      border: 1px solid rgba(15, 76, 129, 0.08);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lead-form-shell::before {
+      content: "Placeholder Form";
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(178, 58, 45, 0.12);
+      color: var(--wbs-red);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .lead-info p {
+      color: var(--wbs-stone);
+      line-height: 1.8;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1.2rem;
+    }
+
+    .check-list div {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      color: var(--wbs-stone);
+      line-height: 1.7;
+    }
+
+    .check-list strong {
+      color: var(--wbs-blue-deep);
+    }
+
+    .check-mark {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(178, 58, 45, 0.12);
+      color: var(--wbs-red);
+      font-weight: 900;
+      margin-top: 0.15rem;
+    }
+
+    .lead-form-shell h3 {
+      margin: 0 0 0.4rem;
+      font-family: "Roboto Slab", serif;
+      font-size: 1.7rem;
+      color: var(--wbs-blue-deep);
+    }
+
+    .lead-form-shell p {
+      margin: 0 0 1.15rem;
+      color: var(--wbs-stone);
+      line-height: 1.7;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.95rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--wbs-blue-deep);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px dashed rgba(15, 76, 129, 0.24);
+      font: inherit;
+      color: var(--wbs-ink);
+      background:
+        repeating-linear-gradient(
+          -45deg,
+          rgba(15, 76, 129, 0.025),
+          rgba(15, 76, 129, 0.025) 10px,
+          rgba(243, 237, 228, 0.4) 10px,
+          rgba(243, 237, 228, 0.4) 20px
+        );
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: 2px solid rgba(15, 76, 129, 0.16);
+      border-color: var(--wbs-blue);
+    }
+
+    .reassurance {
+      margin: 0.8rem 0 0;
+      color: var(--wbs-stone);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .placeholder-note {
+      margin: 0 0 1rem;
+      padding: 0.9rem 1rem;
+      border-radius: 14px;
+      background: rgba(15, 76, 129, 0.06);
+      border: 1px dashed rgba(15, 76, 129, 0.24);
+      color: var(--wbs-stone);
+      line-height: 1.7;
+      font-size: 0.94rem;
     }
 
     .timeline-step {
@@ -583,7 +830,9 @@
 
     @media (max-width: 1080px) {
       .hero-grid,
+      .support-grid,
       .proof-layout,
+      .lead-layout,
       .cta-shell,
       .services,
       .timeline,
@@ -620,6 +869,11 @@
         padding: 4rem 0;
       }
 
+      .placeholder-stack.two-col,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
       .topbar {
         font-size: 0.86rem;
       }
@@ -638,8 +892,8 @@
         >
       </a>
       <div class="nav-actions">
-        <a class="btn btn-secondary" href="#crm-placeholder">CRM Placeholder</a>
-        <a class="btn btn-primary" href="#meeting-placeholder">Schedule Meeting</a>
+        <a class="btn btn-secondary" href="#showroom">Visit Our Showroom</a>
+        <a class="btn btn-primary" href="#lead-form">Book Your Free Planning Session</a>
       </div>
     </div>
   </header>
@@ -648,76 +902,72 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">Remodeling Landing Page</div>
-          <h1>Remake your space with <span>materials, design, and real guidance.</span></h1>
+          <div class="eyebrow">Free Kitchen & Cabinet Upgrade Planning Session</div>
+          <h1>Upgrade Your Kitchen <span>with Confidence</span></h1>
           <p>
-            This Wyoming Building Supply landing page is built for homeowners ready to remodel
-            kitchens, bathrooms, utility spaces, and other high-impact areas of the home. It keeps
-            the polished split-layout feel of your reference page while staying grounded in Wyoming
-            Building Supply's existing blue, red, and warm neutral brand system.
+            Get a free, no-pressure planning session with local experts and discover the best
+            options for your cabinets, layout, and budget.
           </p>
           <div class="hero-points">
-            <span>Cabinets & Vanities</span>
-            <span>Countertops</span>
-            <span>Windows & Doors</span>
-            <span>Design + Consultation</span>
+            <span>Personalized design guidance</span>
+            <span>Cabinet and material recommendations</span>
+            <span>Clear budget expectations</span>
+            <span>Showroom walkthrough experience</span>
+            <span>Local team with long-term support</span>
           </div>
           <div class="hero-cta-row">
-            <a class="btn btn-primary" href="#meeting-placeholder">Book a Design Meeting</a>
-            <a class="btn btn-secondary" href="#services">Explore Remodeling Services</a>
+            <a class="btn btn-primary" href="#lead-form">Book Your Free Planning Session</a>
+            <a class="btn btn-secondary" href="#showroom">Visit Our Showroom</a>
           </div>
         </div>
 
         <div class="hero-panel">
           <div class="hero-card">
             <div class="hero-card-top">
-              <strong>Ready for CRM and scheduler embeds</strong>
+              <strong>Kitchen upgrade inspiration starts here</strong>
               <p>
-                These panels are intentionally built as placeholders so your CRM widget and meeting
-                booking experience can be dropped in without redesigning the page.
+                We help homeowners make smart kitchen decisions with expert guidance, premium
+                cabinetry options, and local support that does not disappear after the sale.
               </p>
             </div>
 
-            <div class="placeholder-stack">
-              <div class="placeholder-box" id="crm-placeholder">
+            <div class="placeholder-stack two-col">
+              <div class="placeholder-box">
                 <div class="placeholder-head">
                   <div class="icon-shell" aria-hidden="true">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3.5" y="4.5" width="17" height="15" rx="2"></rect>
-                      <path d="M7 8h10"></path>
-                      <path d="M7 12h6"></path>
-                      <path d="M7 16h8"></path>
+                      <path d="M4 20h16"></path>
+                      <path d="M6 20V9l6-4 6 4v11"></path>
+                      <path d="M9 20v-5h6v5"></path>
                     </svg>
                   </div>
                   <div>
-                    <strong>CRM Placeholder</strong>
-                    <small>Lead form, intake form, or embedded pipeline widget</small>
+                    <strong>Kitchen cabinetry image</strong>
+                    <small>Placeholder for a polished kitchen upgrade photo</small>
                   </div>
                 </div>
-                <div class="placeholder-body">
-                  Replace this area with the CRM embed code, lead form, or campaign widget.
+                <div class="placeholder-body tall">
+                  Add a premium kitchen cabinetry image here.
                 </div>
               </div>
 
-              <div class="placeholder-box" id="meeting-placeholder">
+              <div class="placeholder-box" id="showroom">
                 <div class="placeholder-head">
                   <div class="icon-shell" aria-hidden="true" style="background: var(--wbs-red);">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                      <rect x="3.5" y="5" width="17" height="15" rx="2"></rect>
-                      <path d="M8 3.5v3"></path>
-                      <path d="M16 3.5v3"></path>
-                      <path d="M3.5 9.5h17"></path>
-                      <path d="M8.5 13h3"></path>
+                      <path d="M3 12h18"></path>
+                      <path d="M12 3v18"></path>
+                      <path d="M5 5l14 14"></path>
+                      <path d="M19 5L5 19"></path>
                     </svg>
                   </div>
                   <div>
-                    <strong>Schedule Meeting Placeholder</strong>
-                    <small>Calendar embed, booking widget, or appointment link</small>
+                    <strong>Showroom consultation image</strong>
+                    <small>Placeholder for a designer guiding a homeowner</small>
                   </div>
                 </div>
-                <div class="placeholder-body">
-                  Replace this block with the scheduling tool for design consultations or showroom
-                  appointments.
+                <div class="placeholder-body tall">
+                  Add a showroom consultation or finished kitchen image here.
                 </div>
               </div>
             </div>
@@ -730,20 +980,20 @@
       <div class="container">
         <div class="trust-grid">
           <div class="trust-item">
-            <strong>40+ Years</strong>
-            <span>Wyoming-rooted experience supporting remodels and new home projects.</span>
+            <strong>Local Team</strong>
+            <span>Real people in the area who understand local homes, projects, and expectations.</span>
           </div>
           <div class="trust-item">
-            <strong>Statewide</strong>
-            <span>Showrooms and service reach across multiple Wyoming communities.</span>
+            <strong>Expert Guidance</strong>
+            <span>Thoughtful help navigating cabinets, finishes, layouts, and practical decisions.</span>
           </div>
           <div class="trust-item">
-            <strong>Hands-On</strong>
-            <span>Consultation, design, materials, and install coordination in one process.</span>
+            <strong>Showroom Support</strong>
+            <span>See products in person and compare options with more clarity and confidence.</span>
           </div>
           <div class="trust-item">
-            <strong>Product Depth</strong>
-            <span>Cabinets, countertops, windows, doors, fireplaces, and more.</span>
+            <strong>Long-Term Care</strong>
+            <span>Service and warranty support for the life of the product, not just the sale.</span>
           </div>
         </div>
       </div>
@@ -752,12 +1002,11 @@
     <section id="services">
       <div class="container">
         <div class="section-heading">
-          <span class="section-tag">What This Page Communicates</span>
-          <h2>Built for homeowners planning a thoughtful remodel, not just shopping for parts.</h2>
+          <span class="section-tag">What You Get</span>
+          <h2>What You Get in Your Free Planning Session</h2>
           <p>
-            The page messaging leans into what Wyoming Building Supply already does well:
-            confidence-building consultation, curated materials, and experienced local support that
-            helps customers turn ideas into finished spaces.
+            This is not a high-pressure sales appointment. It is a guided planning session built to
+            help you make smart, confident decisions about your kitchen or cabinetry upgrade.
           </p>
         </div>
 
@@ -770,10 +1019,10 @@
                 <path d="M9 20v-5h6v5"></path>
               </svg>
             </div>
-            <h3>Kitchen & Bath Focus</h3>
+            <h3>Cabinet Styles & Finishes</h3>
             <p>
-              Lead with the rooms people most often want to remake, modernize, or fully rework,
-              especially kitchens, bathrooms, mudrooms, and utility spaces.
+              Explore cabinet styles, finishes, and product options that make sense for your home,
+              your taste, and the way you use your kitchen.
             </p>
           </article>
 
@@ -787,10 +1036,10 @@
                 <path d="M16 6v12"></path>
               </svg>
             </div>
-            <h3>Materials + Design Together</h3>
+            <h3>Recommendations That Fit</h3>
             <p>
-              Position Wyoming Building Supply as more than a supplier by pairing product depth with
-              design support, consultation, and layout guidance.
+              Get expert recommendations based on your space, your goals, and the kind of upgrade
+              you are actually trying to achieve.
             </p>
           </article>
 
@@ -803,10 +1052,41 @@
                 <path d="M12 12L4 7.5"></path>
               </svg>
             </div>
-            <h3>Easy Next Step</h3>
+            <h3>Real Budget Guidance</h3>
             <p>
-              Keep the call to action simple: book a design conversation, request a consultation, or
-              fill out the CRM form so the team can follow up quickly.
+              Understand realistic budget ranges early so you can make decisions with more clarity
+              and less guesswork.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 7h16"></path>
+                <path d="M4 12h10"></path>
+                <path d="M4 17h7"></path>
+                <path d="M18 11l2 2-5 5-3 1 1-3 5-5z"></path>
+              </svg>
+            </div>
+            <h3>Where to Invest</h3>
+            <p>
+              Learn where it makes sense to invest, where you may be able to save, and how to
+              prioritize the choices that matter most.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.8-2.5 2.2-2.5 4"></path>
+                <path d="M12 17.5h.01"></path>
+              </svg>
+            </div>
+            <h3>Answers from a Local Team</h3>
+            <p>
+              Ask questions, talk through concerns, and get straightforward answers from people who
+              know the products and care about helping you make a good decision.
             </p>
           </article>
         </div>
@@ -816,53 +1096,110 @@
     <section class="proof-section">
       <div class="container">
         <div class="section-heading">
-          <span class="section-tag">Brand Positioning</span>
-          <h2>Trust-first marketing language that fits the existing Wyoming Building Supply voice.</h2>
+          <span class="section-tag">Why Homeowners Choose Us</span>
+          <h2>Why Homeowners Choose Wyoming Building Supply</h2>
           <p>
-            I pulled the tone from the live site and customer reviews: knowledgeable staff, local
-            relationships, responsive communication, and the feeling that the team helps bring a
-            homeowner's vision to life.
+            Homeowners come to Wyoming Building Supply because they want more than products. They
+            want guidance, product confidence, and a team they can trust throughout the process.
           </p>
         </div>
 
         <div class="proof-layout">
-          <article class="proof-card featured">
+          <article class="proof-card featured" id="differentiators">
             <div class="quote-mark">“</div>
-            <h3>Sample headline block for the landing page</h3>
+            <h3>We help people feel more confident before they spend.</h3>
             <p>
-              Whether you're updating one room or rethinking your whole home, Wyoming Building
-              Supply helps you move from inspiration to installation with products, planning, and a
-              team that knows how remodels actually come together.
+              A kitchen upgrade can feel overwhelming when you are trying to compare styles, price
+              ranges, quality levels, and installation decisions. Our job is to simplify that
+              process with honest guidance and real support.
             </p>
             <ul>
-              <li>Designed to feel consultative instead of salesy</li>
-              <li>Strong fit for kitchen, bath, and whole-home makeover campaigns</li>
-              <li>Easy to connect to existing sales and scheduling workflows</li>
+              <li>Design-forward help without the pressure</li>
+              <li>Local support before, during, and after your project</li>
+              <li>Premium cabinetry and material options with practical guidance</li>
             </ul>
           </article>
 
           <div class="proof-list">
             <article class="proof-card">
-              <h3>Messaging themes</h3>
+              <h3>Expert Guidance</h3>
               <p>
-                Local expertise. Personalized support. Quality materials. Showroom inspiration.
-                Practical guidance. Clear next steps.
+                We guide homeowners through layout ideas, cabinet decisions, finish choices, and
+                practical next steps with a helpful, experienced approach.
               </p>
             </article>
             <article class="proof-card">
-              <h3>CTA strategy</h3>
+              <h3>Product Knowledge</h3>
               <p>
-                The page is set up to support two conversion paths: people ready to schedule now and
-                people who want to submit information first through the CRM.
+                Our team understands cabinetry, materials, performance, and how different product
+                choices affect value, function, and long-term satisfaction.
               </p>
             </article>
             <article class="proof-card">
-              <h3>Visual direction</h3>
+              <h3>Showroom Experience</h3>
               <p>
-                Deep Wyoming Building Supply blue, warm sandstone neutrals, and brick red accents
-                give the page a premium showroom feel without drifting away from the main site.
+                Seeing options in person helps people make clearer decisions. Our showroom gives you
+                a better way to compare styles, finishes, and overall feel.
               </p>
             </article>
+            <article class="proof-card">
+              <h3>Premium Materials</h3>
+              <p>
+                We help homeowners choose products that feel elevated, perform well, and fit both
+                their vision and their investment level.
+              </p>
+            </article>
+            <article class="proof-card">
+              <h3>Local Support</h3>
+              <p>
+                We are here in the area, and we stay available. That matters when you want service,
+                answers, or support after the sale or installation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-tag">Service & Lifetime Support</span>
+          <h2>We Don’t Just Help You Choose. We Stand Behind It.</h2>
+          <p>
+            Most companies disappear after the job is done. Wyoming Building Supply does not.
+          </p>
+        </div>
+
+        <div class="support-grid">
+          <div class="support-card">
+            <p>
+              Our local team is here to support you long after your project is complete. From
+              product guidance to ongoing service, we stand behind what we help you build with
+              service and warranty support for the life of the product.
+            </p>
+            <div class="support-pill-list">
+              <div>Guidance before you buy</div>
+              <div>Real help if questions come up later</div>
+              <div>Long-term service and warranty support</div>
+            </div>
+          </div>
+
+          <div class="placeholder-box">
+            <div class="placeholder-head">
+              <div class="icon-shell" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 21s-6.5-3.7-8.3-8.2A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 8.3 7.8C18.5 17.3 12 21 12 21z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong>Finished kitchen image</strong>
+                <small>Placeholder for a premium completed space</small>
+              </div>
+            </div>
+            <div class="placeholder-body tall">
+              Add a finished kitchen image that reinforces premium craftsmanship and trust.
+            </div>
           </div>
         </div>
       </div>
@@ -871,41 +1208,126 @@
     <section>
       <div class="container">
         <div class="section-heading">
-          <span class="section-tag">Suggested Funnel Flow</span>
-          <h2>A clean three-step journey from interest to consultation.</h2>
+          <span class="section-tag">How It Works</span>
+          <h2>How the Process Works</h2>
           <p>
-            This section mirrors the reference page's easy-to-scan conversion flow while staying
-            focused on remodeling homeowners and Wyoming Building Supply's consultative process.
+            A simple path from early interest to a clear kitchen upgrade plan.
           </p>
         </div>
 
         <div class="timeline">
           <article class="timeline-card">
             <div class="timeline-step">01</div>
-            <h3>Share your project</h3>
+            <h3>Schedule Your Free Planning Session</h3>
             <p>
-              Visitors can submit their project details through the CRM embed, whether they are
-              planning a kitchen refresh, a bathroom remodel, or a larger design update.
+              Reach out to book a no-pressure planning session with our local team and start the
+              conversation with clarity.
             </p>
           </article>
 
           <article class="timeline-card">
             <div class="timeline-step">02</div>
-            <h3>Meet with the team</h3>
+            <h3>Visit the Showroom and Explore Your Options</h3>
             <p>
-              The scheduling placeholder is ready for an appointment tool so customers can book a
-              design consultation, showroom visit, or in-home planning call.
+              Review cabinetry, finishes, materials, and style directions in a way that is easier
+              to understand than scrolling through endless options online.
             </p>
           </article>
 
           <article class="timeline-card">
             <div class="timeline-step">03</div>
-            <h3>Build with confidence</h3>
+            <h3>Build a Clear Plan for Your Upgrade</h3>
             <p>
-              Once connected, the team can guide product selections, layout decisions, and next
-              steps toward a finished remodel that feels cohesive and well supported.
+              Leave with better direction around products, priorities, and budget so you know what
+              your next step should be.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-note-section">
+      <div class="container">
+        <div class="trust-note">
+          <span class="section-tag">No Pressure</span>
+          <h2 style="margin: 0.8rem 0 0; font-family: 'Roboto Slab', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--wbs-blue-deep);">No Pressure. No Obligation. Just Expert Help.</h2>
+          <p>
+            You do not need to commit to anything. This session is designed to help you explore your
+            options, understand your next step, and move forward with more clarity and confidence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="lead-section" id="lead-form">
+      <div class="container">
+        <div class="lead-layout">
+          <div class="lead-info">
+            <span class="section-tag">Book Your Session</span>
+            <h2 style="margin: 0.8rem 0 0; font-family: 'Roboto Slab', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--wbs-blue-deep);">Book Your Free Planning Session</h2>
+            <p>
+              If you are thinking about updating your kitchen, replacing cabinets, or improving the
+              look and function of your space, this is the easiest next step.
+            </p>
+            <div class="check-list">
+              <div><span class="check-mark">✓</span><span><strong>Helpful guidance:</strong> get clear answers from a team that knows cabinetry and kitchen upgrades.</span></div>
+              <div><span class="check-mark">✓</span><span><strong>Realistic direction:</strong> talk through your ideas, your goals, and the right level of investment.</span></div>
+              <div><span class="check-mark">✓</span><span><strong>Local support:</strong> connect with a Wyoming team that will still be here after the project moves forward.</span></div>
+            </div>
+          </div>
+
+          <div class="lead-form-shell">
+            <h3>Book Your Free Planning Session</h3>
+            <p>This section is a visual placeholder for the future consultation form and CRM connection.</p>
+            <div class="placeholder-note">
+              This form is not live yet. We will connect it to your CRM or scheduling workflow in the
+              next step so submissions go to the right place.
+            </div>
+            <form onsubmit="return false;">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="first-name">First Name</label>
+                  <input id="first-name" name="first-name" type="text" placeholder="First Name" disabled>
+                </div>
+                <div class="field">
+                  <label for="last-name">Last Name</label>
+                  <input id="last-name" name="last-name" type="text" placeholder="Last Name" disabled>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="Email" disabled>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="Phone" disabled>
+                </div>
+                <div class="field full">
+                  <label for="location">Preferred Location</label>
+                  <select id="location" name="location" disabled>
+                    <option value="">Select a showroom location</option>
+                    <option>Casper</option>
+                    <option>Cody</option>
+                    <option>Jackson</option>
+                    <option>Lander</option>
+                    <option>Riverton</option>
+                    <option>Sheridan</option>
+                    <option>Other / Not Sure Yet</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="project">Tell Us About Your Project</label>
+                  <textarea id="project" name="project" placeholder="Tell us a little about your kitchen, cabinets, goals, timing, or what you want to improve." disabled></textarea>
+                </div>
+              </div>
+              <div class="hero-cta-row" style="margin-top: 1.15rem;">
+                <button class="btn btn-primary" type="submit">Placeholder: Schedule My Free Consultation</button>
+              </div>
+              <p class="reassurance">
+                Once connected, this area will route leads to the right team and trigger the actual
+                consultation scheduling process.
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -914,27 +1336,29 @@
       <div class="container">
         <div class="cta-shell">
           <div class="cta-copy">
-            <span class="section-tag" style="color: #ffd8c8;">Ready To Launch</span>
-            <h2>Swap in the real CRM and booking widgets when you're ready.</h2>
+            <span class="section-tag" style="color: #ffd8c8;">Final Step</span>
+            <h2>Start Planning Your Kitchen Upgrade Today</h2>
             <p>
-              The structure is already in place, so the next pass can focus on wiring in the real
-              embed codes, tightening copy for your exact audience, and replacing any temporary art
-              or text with campaign-specific assets.
+              Take the first step toward a better space with expert guidance, premium options, and a
+              team that stands behind its work.
             </p>
             <div class="hero-cta-row">
-              <a class="btn btn-primary" href="#crm-placeholder">Jump to CRM Area</a>
-              <a class="btn btn-secondary" href="#meeting-placeholder">Jump to Schedule Area</a>
+              <a class="btn btn-primary" href="#lead-form">Book Your Free Planning Session</a>
+              <a class="btn btn-secondary" href="#showroom">Visit Our Showroom</a>
             </div>
           </div>
 
           <aside class="cta-panel">
-            <h3>Best next additions</h3>
-            <p>Once you have the real integrations, this page is ready for a quick production pass.</p>
+            <h3>What makes the offer work</h3>
+            <p>
+              The offer is simple and strong: a free planning session that reduces confusion,
+              builds trust, and gives homeowners a low-risk first step.
+            </p>
             <div class="cta-list">
-              <div>Drop in the CRM embed code</div>
-              <div>Replace the meeting placeholder with your scheduler</div>
-              <div>Add project photos or showroom imagery from Wyoming Building Supply</div>
-              <div>Tailor the headline if you want this page aimed only at kitchen and bath leads</div>
+              <div>Free planning session with no pressure</div>
+              <div>Expert cabinet and product recommendations</div>
+              <div>Clearer budget expectations and next steps</div>
+              <div>Long-term local support after the project moves forward</div>
             </div>
           </aside>
         </div>
@@ -944,8 +1368,8 @@
 
   <footer>
     <div class="container footer-row">
-      <div>Wyoming Building Supply remodel landing page concept</div>
-      <div>Built to match the main site's branding while supporting CRM and calendar embeds.</div>
+      <div>Wyoming Building Supply kitchen upgrade landing page</div>
+      <div>Focused on consultation requests for cabinetry and kitchen improvement projects.</div>
     </div>
   </footer>
 </body>
